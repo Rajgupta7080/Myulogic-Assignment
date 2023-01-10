@@ -2,6 +2,7 @@ import React from 'react'
 import {BsArrowLeft} from "react-icons/bs"
 import { useNavigate } from 'react-router-dom'
 import {AiOutlineClose} from "react-icons/ai"
+let counter = JSON.parse(localStorage.getItem("count"))||false;
 const Test2 = () => {
     const navigate = useNavigate();
     const handleclick =()=>{
@@ -10,6 +11,18 @@ const Test2 = () => {
     const handleclose =()=>{
         navigate("/")
     }
+    const handleans = ()=>{
+        navigate("/test3")
+     }
+ 
+     
+     const count = ()=>{
+         if(counter){
+         localStorage.setItem("count",JSON.stringify(counter+1));
+         }else{
+             localStorage.setItem("count",JSON.stringify(1));
+         }
+      }
   return (
     <div>
          <div style={{marginLeft:"90%"}}><button style={{background:"none", border:"none", fontSize:"34px",cursor:"pointer"}} onClick={handleclose}><AiOutlineClose/></button></div>
@@ -19,9 +32,9 @@ const Test2 = () => {
     <h1 style={{color:"white",textAlign:'center'}}>2. Which shape should be in the rightmost cell with</h1>
     <h1  style={{color:"white",textAlign:'center', marginTop:"-20px"}}>a question mark?</h1>
     
-    <div id='ans'>
+    <div id='ans' onClick={handleans}>
         <div style={{width:"140px"}}><img src="https://en.testometrika.com/upload/answers/9a3/9a3eb223416f61ff5b9177914b70bd60.svg" alt="" /></div>
-        <div style={{width:"140px"}}><img src="https://en.testometrika.com/upload/answers/c4d/c4d606c7c886fc53ecee625417464a02.svg" alt="" /></div>
+        <div onClick={count} style={{width:"140px"}}><img src="https://en.testometrika.com/upload/answers/c4d/c4d606c7c886fc53ecee625417464a02.svg" alt="" /></div>
         <div style={{width:"140px"}}><img src="https://en.testometrika.com/upload/answers/b78/b7854d51e6fc99a7051b4eafe549ccdd.svg" alt="" /></div>
         <div style={{width:"140px"}}><img src="https://en.testometrika.com/upload/answers/b9d/b9db4988f489cc0410930f09bb287963.svg" alt="" /></div>
         <div style={{width:"140px"}}><img src="https://en.testometrika.com/upload/answers/174/174cc63476713040f570f0ffabf5d5a4.svg" alt="" /></div>
