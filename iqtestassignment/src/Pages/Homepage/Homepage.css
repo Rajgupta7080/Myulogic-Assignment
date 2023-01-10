@@ -2,7 +2,7 @@
     width: 250px;
     position: relative;
     left: 40%;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 #btn{
     background: none;
@@ -11,6 +11,7 @@
     font-size: 20px;
     font-weight: 500;
     border: none;
+    cursor: pointer;
 }
 .btnn{
     background-color: #595c9c;
@@ -18,4 +19,9 @@
     border-radius: 5px;
     margin: auto;
     margin-top: 30px;
+}
+.btnn:hover{
+    border: 3px solid white;
+    background-color: 
+    #6b6fbc;
 }

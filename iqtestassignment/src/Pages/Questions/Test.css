@@ -1,0 +1,10 @@
+#ques1{
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+#ans{
+    display: flex;
+    column-gap: 20px;
+    margin-left: 180px;
+}
